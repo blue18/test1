@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="myScript.js"></script>
+<link rel="stylesheet" type="text/css" href="myStyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="menu">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</div>
+
+<div>
+  <h2>The text-align Property</h2>
+  <p>This property sets the horizontal alignment (like left, right, or center) of the content in th or td:</p>
+</div>
+
+<div>
+ <button id="button1" type="button">Add</button> 
+ <table id="table2" hidden>
+ 	<tbody>
+ 		<tr>
+ 			<td>First Name</td>
+ 			<td><input type="text" name="firstname"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Last Name</td>
+ 			<td><input type="text" name="age"></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Savings</td>
+ 			<td><input type="text" name="savings"></td>
+ 		</tr>
+ 	</tbody>
+ </table>
+
+</div>
+
+<!-- Display Table -->
+<div>
+  <table id="table1">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Firstname</th>
+        <th onclick="sortTable(1)">Lastname</th>
+        <th onclick="sortTable(2)">Savings</th>
+      </tr>    
+    </thead>
+    <tbody>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Joe</td>
+        <td>Swanson</td>
+        <td>$300</td>
+      </tr>
+      <tr>
+        <td>Cleveland</td>
+        <td>Brown</td>
+        <td>$250</td>
+      </tr>  
+    </tbody>
+  </table>  
+</div>
+
+<div>
+  <footer id="foot">
+    <p>Copyright &copy; 2017 Umbrella</p>
+  </footer>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#button1").click(function(){
+        $("#table2").toggle();
+    });
+});
+</script>
+
+</body>
+</html>
