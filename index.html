@@ -31,15 +31,15 @@
         <form class="" action="" method="post">
             <tr>
      			<td>First Name</td>
-     			<td><input type="text" name="firstname"></td>
+     			<td><input type="text" name="firstname" required></td>
      		</tr>
      		<tr>
      			<td>Last Name</td>
-     			<td><input type="text" name="age"></td>
+     			<td><input type="text" name="age" required></td>
      		</tr>
      		<tr>
      			<td>Savings</td>
-     			<td><input type="text" name="savings"></td>
+     			<td><input type="number" name="savings" min="0" required></td>
      		</tr>
             <tr>
                 <td><input type="submit"></td>
@@ -91,24 +91,13 @@
   </footer>
 </div>
 
+<!-- Toggle to display the button. -->
 <script>
-$(document).ready(function(){
-    $("#button1").click(function(){
-        $("#table2").toggle();
-    });
-});
-</script>
-
-<script>
-$( "form" ).submit(function( event ) {
-  if ( $( "input:first" ).val() === "correct" ) {
-    $( "span" ).text( "Validated..." ).show();
-    return;
-  }
-
-  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
-  event.preventDefault();
-});
+  $(document).ready(function(){
+      $("#button1").click(function(){
+          $("#table2").toggle();
+      });
+  });
 </script>
 
 </body>
