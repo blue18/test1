@@ -2,9 +2,9 @@
 <html>
 <head>
 
-<script src="myScript.js"></script>
 <link rel="stylesheet" type="text/css" href="myStyle.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="myScript.js"></script>
 
 </head>
 <body>
@@ -31,20 +31,20 @@
         <form class="" action="" method="post">
             <tr>
      			<td>First Name</td>
-     			<td><input type="text" name="firstname" required></td>
+     			<td><input type="text" name="firstname" id="firstname" required></td>
      		</tr>
      		<tr>
      			<td>Last Name</td>
-     			<td><input type="text" name="age" required></td>
+     			<td><input type="text" name="age" id="age" required></td>
      		</tr>
      		<tr>
      			<td>Savings</td>
-     			<td><input type="number" name="savings" min="0" required></td>
+     			<td><input type="number" name="savings" id="savings" min="0" required></td>
      		</tr>
-            <tr>
-                <td><input type="submit"></td>
-                <td><span></span></td>
-            </tr>
+        <tr>
+            <td><input type="submit" id="btnsub"></td>
+            <td><span></span></td>
+        </tr>
         </form>
  	</tbody>
  </table>
@@ -100,5 +100,45 @@
   });
 </script>
 
+<script>
+
+// On click 
+$(document).ready(function(){
+  $("#btnsub").click(function(){
+
+      // Extract data
+      var firstName = $("#firstname").val();
+      var lastName = $("#age").val();
+      var savings = $("#savings").val();
+  });
+});
+
+
+// display in the table
+
+
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
