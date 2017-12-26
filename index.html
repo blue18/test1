@@ -24,28 +24,29 @@
   <p>This property sets the horizontal alignment (like left, right, or center) of the content in th or td:</p>
 </div>
 
+<!-- Input section of add user -->
 <div>
  <button id="button1" type="button">Add</button>
  <table id="table2" hidden>
  	<tbody>
-        <form class="" action="" method="post">
-            <tr>
-     			<td>First Name</td>
-     			<td><input type="text" name="firstname" id="firstname" required></td>
-     		</tr>
-     		<tr>
-     			<td>Last Name</td>
-     			<td><input type="text" name="age" id="age" required></td>
-     		</tr>
-     		<tr>
-     			<td>Savings</td>
-     			<td><input type="number" name="savings" id="savings" min="0" required></td>
-     		</tr>
-        <tr>
-            <td><input type="submit" id="btnsub"></td>
-            <td><span></span></td>
-        </tr>
-        </form>
+      <form class="" action="" method="post">
+          <tr>
+   			<td>First Name</td>
+   			<td><input type="text" name="firstname" id="firstname" required></td>
+   		</tr>
+   		<tr>
+   			<td>Last Name</td>
+   			<td><input type="text" name="age" id="age" required></td>
+   		</tr>
+   		<tr>
+   			<td>Savings</td>
+   			<td><input type="number" name="savings" id="savings" min="0" required></td>
+   		</tr>
+      <tr>
+        <td><input type="button" value="Send" id="btnsub"></td>
+        <td><span></span></td>
+      </tr>
+      </form>
  	</tbody>
  </table>
 </div>
@@ -110,12 +111,13 @@ $(document).ready(function(){
       var firstName = $("#firstname").val();
       var lastName = $("#age").val();
       var savings = $("#savings").val();
+
+      // Display data in table. 
+      var markup = "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + savings+"</td></tr>";
+      $("#table1 tbody").append(markup);
+
   });
 });
-
-
-// display in the table
-
 
 </script>
 
