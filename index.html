@@ -56,7 +56,14 @@
    <tbody>
      <tr>
        <td>First Name</td>
-       <td><input type="text" name="name" required></td>
+       <td><input type="text" name="firstname" id="deleteFirstname" required></td>
+     </tr>
+     <tr>
+       <td>Last Name</td>
+       <td><input type="text" name="lastname" id="age" required></td>
+     </tr>
+     <tr>
+       <td><input type="button" value="Find" id="btnsubDelete"></td>
      </tr>
    </tbody>
  </table>
@@ -134,19 +141,15 @@ $(document).ready(function(){
   });
 });
 
-/**
- * Delete the target row. 
- * @return {Void}
- */
-function deleteRow() {
-  var rowCount = table1.rows.length;
-  if (rowCount != 1) { 
-    table1.deleteRow(rowCount-1);
-  } else {
-    return;
-  }
-}
+/* Delete row with the given first and last name */
+$(document).ready(function(){
+  $("#btnsubDelete").click(function(){
 
+    // Extract data
+    var firstName = $("#deleteFirstname").val();
+
+  });
+});
 
 </script>
 
