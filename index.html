@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+<!-- Navigation bar -->
 <div id="menu">
   <ul>
     <li><a class="active" href="#home">Home</a></li>
@@ -27,27 +27,38 @@
 <!-- Input section of add user -->
 <div>
  <button id="button1" type="button">Add</button>
+ <button id="deleteRowBtn" type="button">Delete</button>
+
  <table id="table2" hidden>
- 	<tbody>
-      <form class="" action="" method="post">
-          <tr>
-   			<td>First Name</td>
-   			<td><input type="text" name="firstname" id="firstname" required></td>
-   		</tr>
-   		<tr>
-   			<td>Last Name</td>
-   			<td><input type="text" name="age" id="age" required></td>
-   		</tr>
-   		<tr>
-   			<td>Savings</td>
-   			<td><input type="number" name="savings" id="savings" min="0" required></td>
-   		</tr>
-      <tr>
-        <td><input type="button" value="Send" id="btnsub"></td>
-        <td><span></span></td>
-      </tr>
-      </form>
- 	</tbody>
+   	<tbody>
+        <form class="" action="" method="post">
+        <tr>
+     			<td>First Name</td>
+     			<td><input type="text" name="firstname" id="firstname" required></td>
+     		</tr>
+     		<tr>
+     			<td>Last Name</td>
+     			<td><input type="text" name="age" id="age" required></td>
+     		</tr>
+     		<tr>
+     			<td>Savings</td>
+     			<td><input type="number" name="savings" id="savings" min="0" required></td>
+     		</tr>
+        <tr>
+          <td><input type="button" value="Send" id="btnsub"></td>
+          <td><span></span></td>
+        </tr>
+        </form>
+   	</tbody>
+ </table>
+
+ <table id="deleteTable" hidden>
+   <tbody>
+     <tr>
+       <td>First Name</td>
+       <td><input type="text" name="name" required></td>
+     </tr>
+   </tbody>
  </table>
 </div>
 
@@ -99,25 +110,43 @@
           $("#table2").toggle();
       });
   });
+
+  $(document).ready(function(){
+    $("#deleteRowBtn").click(function(){
+      $("#deleteTable").toggle();
+    });
+  });
 </script>
 
 <script>
 
-// On click 
 $(document).ready(function(){
   $("#btnsub").click(function(){
 
-      // Extract data
-      var firstName = $("#firstname").val();
-      var lastName = $("#age").val();
-      var savings = $("#savings").val();
+    // Extract data
+    var firstName = $("#firstname").val();
+    var lastName  = $("#age").val();
+    var savings   = $("#savings").val();
 
-      // Display data in table. 
-      var markup = "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + savings+"</td></tr>";
-      $("#table1 tbody").append(markup);
-
+    // Display data in table.
+    var markup = "<tr><td>" + firstName + "</td><td>" + lastName + "</td><td>" + savings+"</td></tr>";
+    $("#table1 tbody").append(markup);
   });
 });
+
+/**
+ * Delete the target row. 
+ * @return {Void}
+ */
+function deleteRow() {
+  var rowCount = table1.rows.length;
+  if (rowCount != 1) { 
+    table1.deleteRow(rowCount-1);
+  } else {
+    return;
+  }
+}
+
 
 </script>
 
