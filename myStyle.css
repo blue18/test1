@@ -10,7 +10,7 @@
 }
 
 #table1 th {
-    text-align      : left;
+    text-align      : center;
     background-color: orange;
 }
 div {
@@ -98,9 +98,10 @@ div {
     text-align: left;
 }
 
-
-
-
+#firstCol {
+    width: 5%;
+    text-align: center;
+}
 
 
 
