@@ -98,52 +98,6 @@
   </footer>
 </div>
 
-<!-- Toggle to display the button. -->
-<script>
-/* Add row feature */
-$(document).ready(function(){
-    $("#button1").click(function(){
-        $("#table2").toggle();
-    });
-});
-/* Delete row feature */
-$(document).ready(function(){
-  $("#deleteRowBtn").click(function(){
-    $("#deleteTable").toggle();
-  });
-});
-
-/* Inserts information into the table */
-$(document).ready(function(){
-  $("#btnsub").click(function(){
-
-    // Extract data
-    var firstName = $("#firstname").val();
-    var lastName  = $("#age").val();
-    var savings   = $("#savings").val();
-
-    if (firstName != "" && lastName != "" && savings != "") {
-        // Display data in table.
-        var markup = "<tr><td id='firstCol'><input type='checkbox' name='record'></td><td>" + firstName + "</td><td>" + lastName + "</td><td>$" + savings+"</td></tr>";
-        $("#table1 tbody").append(markup);
-    } else {
-        return;
-    }
-  });
-});
-
-/* Delete row with the given first and last name */
-// Find and remove selected table rows
-$("#deleteRowBtn").click(function(){
-    $("#table1 tbody").find('input[name="record"]').each(function(){
-      if($(this).is(":checked")){
-            $(this).parents("tr").remove();
-        }
-    });
-});
-
-</script>
-
 </body>
 </html>
 
