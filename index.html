@@ -10,86 +10,14 @@
 <body>
 
 <!-- Navigation bar -->
-<div id="menu">
-  <ul>
-    <li><a class="active" href="#home">Home</a></li>
-    <li><a href="#news">News</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#about">About</a></li>
-  </ul>
-</div>
-
 <div>
-  <h2>The text-align Property</h2>
-  <p>This property sets the horizontal alignment (like left, right, or center) of the content in th or td:</p>
-</div>
-
-<div>
-     <button id="button1" type="button">Add</button>
-     <button id="deleteRowBtn" type="button">Delete</button>
-
-     <table id="table2" hidden>
-       	<tbody>
-            <form class="" action="" method="post">
-            <tr>
-         			<td>First Name</td>
-         			<td><input type="text" name="firstname" id="firstname" required></td>
-         		</tr>
-         		<tr>
-         			<td>Last Name</td>
-         			<td><input type="text" name="age" id="age" required></td>
-         		</tr>
-         		<tr>
-         			<td>Savings</td>
-         			<td><input type="number" name="savings" id="savings" min="0" required></td>
-         		</tr>
-            <tr>
-              <td><input type="button" value="Send" id="btnsub"></td>
-              <td><span></span></td>
-            </tr>
-            </form>
-       	</tbody>
-     </table>
-</div>
-
-<!-- Display Table -->
-<div>
-  <table id="table1">
-    <thead>
-      <tr>
-        <th id="firstCol">Select</th>
-        <th onclick="sortTable(0)">Firstname</th>
-        <th onclick="sortTable(1)">Lastname</th>
-        <th onclick="sortTable(2)">Savings</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id="firstCol"><input type="checkbox" name="record"></td>        
-        <td>Peter</td>
-        <td>Griffin</td>
-        <td>$100</td>
-      </tr>
-      <tr>
-        <td id="firstCol"><input type="checkbox" name="record"></td>        
-        <td>Lois</td>
-        <td>Griffin</td>
-        <td>$150</td>
-      </tr>
-      <tr>
-        <td id="firstCol"><input type="checkbox" name="record"></td>        
-        <td>Joe</td>
-        <td>Swanson</td>
-        <td>$300</td>
-      </tr>
-      <tr>
-        <td id="firstCol"><input type="checkbox" name="record"></td>        
-        <td>Cleveland</td>
-        <td>Brown</td>
-        <td>$250</td>
-      </tr>
-    </tbody>
-  </table>
+    <form class="" action="index.html" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" value="">
+        <label for="password">Password</label>
+        <input type="password" name="password" value="">
+        <input type="submit" value="Submit" onclick="login()">
+    </form>
 </div>
 
 <div>
@@ -100,24 +28,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
