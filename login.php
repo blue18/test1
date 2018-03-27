@@ -1,5 +1,7 @@
 <?php
 
+	// This is all a test. No actual data is being used.
+
 	session_start();
 
 	$user = 'root';
@@ -8,30 +10,26 @@
 	$host = 'localhost';
 	$port = 3306;
 
-	$link = mysqli_init();
-	$success = mysqli_real_connect(
-	   $link,
-	   $host,
-	   $user,
-	   $password,
-	   $db,
-	   $port
-	);
+	$connect = mysqli_connect($host, $user, $password, $db);
 
-	if ($success) {
-		echo "Database connected.";
+	// Check connection
+	if ($connect->connect_error) {
+	    die("Connection failed: " . $connect->connect_error);
 	}
 
-	if (isset($_SESSION['username'])) {
+	// If username is already signed in, go to index file.
+	if (isset($_SESSION['Username'])) {
 		header("Location: index.php");
 	}
 
-/*
+	// beisz iloveyou143
 	if (isset($_POST['login'])) {
-		$username = $_POST['username'];
-		$password = $_POST['password'];
 
-		if ($stmt = $conn->prepare("SELECT * FROM Users WHERE Login = ? AND Current = '1'")) {
+		// Get data from post
+		$username = $_POST['Username'];
+		$password = $_POST['Password'];
+
+		if ($stmt = $connect->prepare("SELECT * FROM users WHERE users.Username = ?")) {
 
 			$stmt->bind_param("s", $username);
 			$stmt->execute();
@@ -41,7 +39,7 @@
 
 			if ($userinfo) {
 				if ($userinfo['Password'] == md5($password)) {
-					$_SESSION['userid'] = $userinfo['EmployeeId'];
+					$_SESSION['Username'] = $userinfo['Username'];
 					$stmt->close();
 					header("Location: index.php");
 					die();
@@ -54,11 +52,11 @@
 
 			$stmt->close();
 		} else {
-			echo "something went wrong";
+			echo "FAIL IN prepare";
 		}
 	}
 
-*/
+
  ?>
 
 
@@ -75,10 +73,10 @@
 <!-- Navigation bar -->
 <div>
     <form class="" action="" method="post">
-        <label for="username">Username</label>
-        <input type="text" name="username" id="username" value="">
-        <label for="password">Password</label>
-        <input type="password" name="password" value="">
+        <label for="Username">Username</label>
+        <input type="text" name="Username" id="Username" value="">
+        <label for="Password">Password</label>
+        <input type="Password" name="Password" value="">
         <input type="submit" name="login" value="login">
     </form>
 </div>

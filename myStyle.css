@@ -10,3 +10,14 @@ body {
     font-size   : 14px;
     width       : 100%;
 }
+
+.sublist {
+    display: inline;
+}
+.popup {
+    padding: 30px;
+    background: white;
+    text-align: center;
+    z-index: auto;
+    width: 15%;
+}
