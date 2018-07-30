@@ -1,1 +1,1 @@
-Hello
+A simple login page. 
